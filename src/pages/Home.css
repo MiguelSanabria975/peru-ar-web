@@ -1,0 +1,100 @@
+.home-container {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ICONO CENTRAL */
+.home-icon {
+  font-size: 64px;
+  color: #c9a24d; /* dorado ancestral */
+  margin-bottom: 16px;
+}
+
+/* TÍTULOS */
+.home-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.home-subtitle {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 24px;
+}
+
+.home-quote {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 16px 0;
+}
+
+.home-description {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 32px;
+  max-width: 320px;
+}
+
+/* FEATURE CARDS */
+.home-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 32px;
+}
+
+.feature-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature-card ion-icon {
+  font-size: 32px;
+  color: #c9a24d;
+}
+
+.feature-card span {
+  font-size: 14px;
+}
+
+/* IMPACTO LOCAL */
+.home-impact {
+  margin: 24px 0;
+  padding: 16px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.impact-title {
+  color: #f5c542;
+  font-weight: 600;
+}
+
+.home-impact p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* BOTONES FINALES */
+.home-actions {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
