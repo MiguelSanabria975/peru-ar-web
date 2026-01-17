@@ -1,4 +1,5 @@
 import Page from '../components/Page'
+import React from 'react';
 import {
   IonButton,
   IonIcon,
