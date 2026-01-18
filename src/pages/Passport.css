@@ -1,0 +1,164 @@
+.passport-content {
+  --padding-top: 24px;
+  --padding-bottom: 24px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* TARJETAS GENERALES */
+.passport-card {
+  background: linear-gradient(135deg, #e8fbff, #fff9e6);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+}
+
+.hero-icon {
+  font-size: 48px;
+  color: var(--ion-color-primary);
+  margin-bottom: 8px;
+}
+
+.hero-quote {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: rgba(255, 204, 0, 0.2);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* CAMINO SAGRADO */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card-badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.card-hint {
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* CATEGORÍAS */
+.categories {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 12px;
+}
+
+.category ion-icon {
+  font-size: 24px;
+  color: var(--ion-color-primary);
+}
+
+/* SELLOS */
+.seal-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px;
+  margin-top: 12px;
+
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.seal-icon {
+  font-size: 24px;
+  color: var(--ion-color-primary);
+}
+
+.seal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.seal-info small {
+  font-size: 11px;
+  color: #666;
+}
+
+.seal-check {
+  font-size: 20px;
+  color: var(--ion-color-success);
+}
+
+/* SUBTÍTULO DE SECCIÓN */
+.section-subtitle {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* GRID DE SITIOS */
+.sites-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* TARJETA DE SITIO */
+.site-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  padding: 16px;
+  border-radius: 14px;
+
+  background: rgba(0, 0, 0, 0.04);
+  text-align: center;
+
+  font-size: 12px;
+}
+
+.site-card ion-icon {
+  font-size: 24px;
+  color: var(--ion-color-medium);
+}
+
+/* ACCIONES FINALES */
+.passport-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
