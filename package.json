@@ -51,7 +51,7 @@
   },
 "scripts": {
   "start": "ionic serve",
-  "build": "ionic build",
+  "build": "react-scripts build && rmdir /s /q docs && move build docs",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
 },
