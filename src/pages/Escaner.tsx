@@ -48,63 +48,80 @@ const Escaner: React.FC = () => {
 
       <IonContent fullscreen className="scan-content">
 
-        {status === 'idle' && (
-          <div className="scan-card">
-            <IonIcon icon={qrCodeOutline} className="scan-icon" />
+  <div className="scan-background" />
 
-            <h2>Boleto Turístico de Cusco</h2>
-            <p>
-              Escanea el código QR de tu boleto turístico para
-              desbloquear contenido premium y experiencias exclusivas.
-            </p>
+  {status === 'idle' && (
+    <div className="scan-card">
+      <IonIcon icon={qrCodeOutline} className="scan-icon" />
 
-            <IonButton expand="block" onClick={startScan}>
-              Iniciar Escaneo
-            </IonButton>
-          </div>
-        )}
+      <h2>Boleto Turístico de Cusco</h2>
 
-        {status === 'scanning' && (
-          <div className="scan-card scanning">
-            <IonSpinner name="crescent" />
-            <p>Escaneando...</p>
+      <p className="scan-tagline">
+        Patrimonio Vivo del Mundo
+      </p>
 
-            <IonButton expand="block" disabled>
-              Escaneando...
-            </IonButton>
-          </div>
-        )}
+      <p>
+        Escanea el código QR de tu boleto turístico para
+        desbloquear contenido premium y experiencias exclusivas.
+      </p>
 
-        {status === 'success' && (
-          <div className="scan-card success">
-            <IonIcon
-              icon={checkmarkCircleOutline}
-              className="scan-success-icon"
-            />
+      <IonButton expand="block" className="scan-primary-btn" onClick={startScan}>
+        Iniciar Escaneo
+      </IonButton>
+    </div>
+  )}
 
-            <h2>¡Boleto Verificado!</h2>
-            <p>
-              Tu Boleto Turístico de Cusco ha sido activado correctamente.
-            </p>
+  {status === 'scanning' && (
+    <div className="scan-card scanning">
+      <IonSpinner name="crescent" />
+      <p className="scan-status">Escaneando el camino sagrado…</p>
 
-            <div className="scan-code">
-              BTC-2024-CUSCO-PREMIUM
-            </div>
+      <IonButton expand="block" disabled>
+        Escaneando…
+      </IonButton>
+    </div>
+  )}
 
-            <IonButton
-              expand="block"
-              onClick={() => ionRouter.push('/map')}
-            >
-              Explorar Mapa de Cusco
-            </IonButton>
+  {status === 'success' && (
+    <div className="scan-card success">
+      <IonIcon
+        icon={checkmarkCircleOutline}
+        className="scan-success-icon"
+      />
 
-            <IonButton expand="block" fill="outline" routerLink="/Passport">
-              Ver mi Pasaporte Digital
-            </IonButton>
-          </div>
-        )}
+      <h2>¡Boleto Verificado!</h2>
 
-      </IonContent>
+      <p>
+        Tu Boleto Turístico de Cusco ha sido activado correctamente.
+      </p>
+
+      <div className="scan-code">
+        BTC-2024-CUSCO-PREMIUM
+      </div>
+
+      <IonButton
+        expand="block"
+        className="scan-primary-btn"
+        onClick={() => ionRouter.push('/map')}
+      >
+        Explorar Mapa de Cusco
+      </IonButton>
+
+      <IonButton
+        expand="block"
+        fill="outline"
+        className="scan-secondary-btn"
+        routerLink="/passport"
+      >
+        Ver mi Pasaporte Digital
+      </IonButton>
+    </div>
+  )}
+
+</IonContent>
+
+
+
     </IonPage>
   )
 }
