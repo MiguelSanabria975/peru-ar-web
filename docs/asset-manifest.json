@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/peru-ar-web/static/css/main.f0a251db.css",
-    "main.js": "/peru-ar-web/static/js/main.87ee97bd.js",
+    "main.css": "/peru-ar-web/static/css/main.e9239618.css",
+    "main.js": "/peru-ar-web/static/js/main.90599581.js",
     "static/js/806.612e3226.chunk.js": "/peru-ar-web/static/js/806.612e3226.chunk.js",
     "static/js/923.0a78bc26.chunk.js": "/peru-ar-web/static/js/923.0a78bc26.chunk.js",
     "static/js/627.e46727f7.chunk.js": "/peru-ar-web/static/js/627.e46727f7.chunk.js",
@@ -13,8 +13,8 @@
     "static/js/422.9d2be518.chunk.js": "/peru-ar-web/static/js/422.9d2be518.chunk.js",
     "service-worker.js": "/peru-ar-web/service-worker.js",
     "index.html": "/peru-ar-web/index.html",
-    "main.f0a251db.css.map": "/peru-ar-web/static/css/main.f0a251db.css.map",
-    "main.87ee97bd.js.map": "/peru-ar-web/static/js/main.87ee97bd.js.map",
+    "main.e9239618.css.map": "/peru-ar-web/static/css/main.e9239618.css.map",
+    "main.90599581.js.map": "/peru-ar-web/static/js/main.90599581.js.map",
     "806.612e3226.chunk.js.map": "/peru-ar-web/static/js/806.612e3226.chunk.js.map",
     "923.0a78bc26.chunk.js.map": "/peru-ar-web/static/js/923.0a78bc26.chunk.js.map",
     "627.e46727f7.chunk.js.map": "/peru-ar-web/static/js/627.e46727f7.chunk.js.map",
@@ -26,7 +26,7 @@
     "422.9d2be518.chunk.js.map": "/peru-ar-web/static/js/422.9d2be518.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0a251db.css",
-    "static/js/main.87ee97bd.js"
+    "static/css/main.e9239618.css",
+    "static/js/main.90599581.js"
   ]
 }
