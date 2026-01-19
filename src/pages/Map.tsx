@@ -1,145 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import React, { useEffect, useState } from 'react';
-import {
-  IonButton,
-  IonIcon
-} from '@ionic/react';
-import { arrowBackOutline, locateOutline } from 'ionicons/icons';
-
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMap
-} from 'react-leaflet';
-
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-
-/* ---------- Fix íconos Leaflet (importante) ---------- */
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  iconUrl:
-    'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  shadowUrl:
-    'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png'
-});
-
-/* ---------- Subcomponente para mover el mapa ---------- */
-interface FlyToUserProps {
-  position: [number, number];
-}
-
-const FlyToUser: React.FC<FlyToUserProps> = ({ position }) => {
-  const map = useMap();
-
-  useEffect(() => {
-    map.flyTo(position, 16, { duration: 1.5 });
-  }, [position, map]);
-
-  return null;
-};
-
-/* ---------- Componente principal ---------- */
-
-const Map: React.FC = () => {
-  const cuscoCenter: [number, number] = [-13.53195, -71.96746];
-
-  const [userPosition, setUserPosition] =
-    useState<[number, number] | null>(null);
-
-  /* ---------- Obtener geolocalización ---------- */
-  useEffect(() => {
-    if (!navigator.geolocation) {
-      console.warn('Geolocalización no soportada');
-      return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setUserPosition([
-          position.coords.latitude,
-          position.coords.longitude
-        ]);
-      },
-      (error) => {
-        console.error('Error de geolocalización:', error);
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 10000
-      }
-    );
-  }, []);
-
-  return (
-    <div style={{ position: 'relative' }}>
-
-      {/* BOTÓN VOLVER */}
-      <IonButton
-        routerLink="/Home"
-        fill="solid"
-        color="light"
-        style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-          zIndex: 1000
-        }}
-      >
-        <IonIcon icon={arrowBackOutline} />
-      </IonButton>
-
-      {/* MAPA */}
-      <MapContainer
-        center={cuscoCenter}
-        zoom={15}
-        zoomControl={false}
-        scrollWheelZoom={false}
-        style={{ height: '100vh', width: '100vw' }}
-      >
-        <TileLayer
-          attribution="© OpenStreetMap contributors"
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-
-        {/* UBICACIÓN DEL USUARIO */}
-        {userPosition && (
-          <>
-            <Marker position={userPosition}>
-              <Popup>Estás aquí</Popup>
-            </Marker>
-            <FlyToUser position={userPosition} />
-          </>
-        )}
-      </MapContainer>
-
-      {/* BOTÓN CENTRAR UBICACIÓN */}
-      {userPosition && (
-        <IonButton
-          fill="solid"
-          color="primary"
-          style={{
-            position: 'absolute',
-            bottom: '24px',
-            right: '16px',
-            zIndex: 1000
-          }}
-        >
-          <IonIcon icon={locateOutline} />
-        </IonButton>
-      )}
-    </div>
-  );
-};
-
-export default Map;
-=======
 import {
   IonPage,
   IonHeader,
@@ -166,62 +24,6 @@ import {
   star
 } from 'ionicons/icons'
 
-=======
-import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
-  IonButton,
-  IonIcon,
-  IonTitle,
-  IonContent,
-  IonCard,
-  IonCardContent,
-  IonText,
-  IonChip
-} from '@ionic/react'
-
-import {
-  arrowBack,
-  flash,
-  trophy,
-  eye,
-  volumeHigh,
-  mapOutline,
-  ticketOutline,
-  star
-} from 'ionicons/icons'
-
->>>>>>> Stashed changes
-=======
-import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
-  IonButton,
-  IonIcon,
-  IonTitle,
-  IonContent,
-  IonCard,
-  IonCardContent,
-  IonText,
-  IonChip
-} from '@ionic/react'
-
-import {
-  arrowBack,
-  flash,
-  trophy,
-  eye,
-  volumeHigh,
-  mapOutline,
-  ticketOutline,
-  star
-} from 'ionicons/icons'
-
->>>>>>> Stashed changes
 import { useIonRouter } from '@ionic/react'
 import { useState } from 'react'
 import { btcSites } from '../data/btcSites'
@@ -237,7 +39,6 @@ const MapPage = () => {
 
   return (
     <IonPage>
-      {/* HEADER */}
       <IonHeader translucent>
         <IonToolbar color="dark">
           <IonButtons slot="start">
@@ -259,7 +60,6 @@ const MapPage = () => {
         </IonToolbar>
       </IonHeader>
 
-      {/* CONTENT */}
       <IonContent fullscreen color="dark">
         {/* XP BAR */}
         <div className="flex justify-center gap-3 py-3">
@@ -276,10 +76,9 @@ const MapPage = () => {
           </IonChip>
         </div>
 
-        {/* MAP SIMULATION */}
+        {/* MAP */}
         <div className="relative h-[65vh] mx-4 rounded-2xl overflow-hidden bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 border border-yellow-600/30">
 
-          {/* USER POSITION */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
             <div className="w-20 h-20 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center shadow-xl">
               <ChakanaIcon className="w-10 h-10" color="white" />
@@ -289,7 +88,6 @@ const MapPage = () => {
             </IonText>
           </div>
 
-          {/* SITES */}
           {btcSites.map((site: any, i: number) => (
             <div
               key={site.id}
@@ -317,7 +115,6 @@ const MapPage = () => {
           ))}
         </div>
 
-        {/* SITE DETAIL */}
         {selectedSite && (
           <IonCard className="mx-4 mt-4">
             <IonCardContent>
@@ -346,7 +143,6 @@ const MapPage = () => {
           </IonCard>
         )}
 
-        {/* QUICK ACTIONS */}
         {!selectedSite && (
           <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
             <div className="flex gap-3 bg-black/80 px-4 py-2 rounded-full border border-white/20">
@@ -365,10 +161,3 @@ const MapPage = () => {
 }
 
 export default MapPage
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
