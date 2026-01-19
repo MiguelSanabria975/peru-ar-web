@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import React, { useEffect, useState } from 'react';
 import {
   IonButton,
@@ -164,6 +165,34 @@ import {
   star
 } from 'ionicons/icons'
 
+=======
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonButtons,
+  IonButton,
+  IonIcon,
+  IonTitle,
+  IonContent,
+  IonCard,
+  IonCardContent,
+  IonText,
+  IonChip
+} from '@ionic/react'
+
+import {
+  arrowBack,
+  flash,
+  trophy,
+  eye,
+  volumeHigh,
+  mapOutline,
+  ticketOutline,
+  star
+} from 'ionicons/icons'
+
+>>>>>>> Stashed changes
 import { useIonRouter } from '@ionic/react'
 import { useState } from 'react'
 import { btcSites } from '../data/btcSites'
@@ -307,4 +336,7 @@ const MapPage = () => {
 }
 
 export default MapPage
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
