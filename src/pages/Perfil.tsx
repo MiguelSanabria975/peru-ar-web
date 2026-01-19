@@ -6,10 +6,12 @@ import {
   IonTitle,
   IonContent,
   IonIcon,
-  IonButton
+  IonButton,
+  IonButtons
 } from '@ionic/react'
 
 import {
+  arrowBack,
   trophyOutline,
   ribbonOutline,
   mapOutline,
@@ -22,16 +24,21 @@ import {
   compassOutline
 } from 'ionicons/icons'
 
-import { useHistory } from 'react-router'
+import { useIonRouter } from '@ionic/react'
 import './Perfil.css'
 
 const Perfil: React.FC = () => {
-  const history = useHistory()
+  const router = useIonRouter()
 
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="dark">
+          <IonButtons slot="start">
+            <IonButton onClick={() => router.push('/home')}>
+              <IonIcon icon={arrowBack} />
+            </IonButton>
+          </IonButtons>
           <IonTitle>Mi Perfil</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -88,7 +95,7 @@ const Perfil: React.FC = () => {
           </div>
         </div>
 
-        {/* INSIGNIAS Y LOGROS */}
+        {/* INSIGNIAS */}
         <div className="profile-card">
           <h3>Insignias y Logros</h3>
 
@@ -119,14 +126,6 @@ const Perfil: React.FC = () => {
               <p>Completa todos los caminos sagrados</p>
             </div>
           </div>
-
-          <div className="achievement-card locked">
-            <IonIcon icon={lockClosed} />
-            <div>
-              <strong>Maestro del Cusco</strong>
-              <p>Explora todos los sitios disponibles</p>
-            </div>
-          </div>
         </div>
 
         {/* COMPARTIR */}
@@ -142,16 +141,16 @@ const Perfil: React.FC = () => {
           </IonButton>
         </div>
 
-        {/* BOTONES FINALES */}
+        {/* ACCIONES */}
         <div className="profile-actions">
-          <IonButton expand="block" onClick={() => history.push('/map')}>
+          <IonButton expand="block" onClick={() => router.push('/map')}>
             Volver al Mapa
           </IonButton>
 
           <IonButton
             expand="block"
             fill="outline"
-            onClick={() => history.push('/passport')}
+            onClick={() => router.push('/passport')}
           >
             Volver al Pasaporte Digital
           </IonButton>

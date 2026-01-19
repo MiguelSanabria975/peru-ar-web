@@ -1,160 +1,124 @@
 import React from 'react'
+
 import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
   IonIcon,
-  IonProgressBar
+  IonText,
+  IonButton
 } from '@ionic/react'
 
-import { IonButton } from '@ionic/react'
-import { useHistory } from 'react-router'
-
 import {
-  compassOutline,
-  sunnyOutline,
-  trailSignOutline,
-  leafOutline,
-  restaurantOutline,
-  shieldCheckmarkOutline,
-  checkmarkCircleOutline,
-  helpCircleOutline,
+  personCircleOutline,
+  flash,
   mapOutline,
-  trophyOutline
+  checkmarkCircle,
+  lockClosed,
+  shareSocialOutline
 } from 'ionicons/icons'
 
+import Page from '../components/Page'
 import './Passport.css'
 
-const Passport: React.FC = () => {
-  const history = useHistory()
+const Passport = () => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Pasaporte del Explorador</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-
-      <IonContent fullscreen className="passport-content">
+    <Page title="Pasaporte del explorador">
+      <IonContent fullscreen className="profile-content">
 
         {/* TARJETA PRINCIPAL */}
-        <div className="passport-card hero">
-          <IonIcon icon={compassOutline} className="hero-icon" />
+        <div className="profile-card main-profile-card">
+          <div className="profile-header">
+            <IonIcon
+              icon={personCircleOutline}
+              className="profile-main-icon"
+            />
 
-          <h2>Pasaporte del Explorador</h2>
-          <p className="hero-quote">
-            Tu viaje es un homenaje a quienes caminaron antes
+            <div>
+              <IonText>
+                <h2>Pasaporte del explorador</h2>
+              </IonText>
+              <p className="profile-subtitle">
+                Explorador del Patrimonio Vivo
+              </p>
+            </div>
+          </div>
+
+          <div className="profile-meta">
+            <span>Pasaporte activo</span>
+            <span>•</span>
+            <span>BTC Premium</span>
+          </div>
+        </div>
+
+        {/* ESTADÍSTICAS */}
+        <div className="profile-card">
+          <IonText>
+            <h3>Progreso</h3>
+          </IonText>
+
+          <div className="stats-grid">
+            <div className="stat-card">
+              <IonIcon icon={flash} className="stat-icon warning" />
+              <strong>120 XP</strong>
+              <span>Experiencia</span>
+            </div>
+
+            <div className="stat-card">
+              <IonIcon icon={mapOutline} className="stat-icon primary" />
+              <strong>3 / 10</strong>
+              <span>Sitios</span>
+            </div>
+          </div>
+        </div>
+
+        {/* SELLLOS SAGRADOS */}
+        <div className="profile-card">
+          <IonText>
+            <h3>Sellos Sagrados</h3>
+          </IonText>
+
+          <div className="achievement-card unlocked">
+            <IonIcon icon={checkmarkCircle} />
+            <div>
+              <strong>Qoricancha</strong>
+              <p>Templo del Sol</p>
+            </div>
+            <IonIcon icon={checkmarkCircle} className="status-icon" />
+          </div>
+
+          <div className="achievement-card locked">
+            <IonIcon icon={lockClosed} />
+            <div>
+              <strong>Sacsayhuamán</strong>
+              <p>Fortaleza ceremonial</p>
+            </div>
+            <IonIcon icon={lockClosed} className="status-icon" />
+          </div>
+        </div>
+
+        {/* COMPARTIR */}
+        <div className="profile-card share-card">
+          <IonIcon icon={shareSocialOutline} className="share-icon" />
+          <IonText>
+            <h3>Comparte tu camino</h3>
+          </IonText>
+          <p>
+            Muestra tu progreso y apoya el turismo cultural responsable.
           </p>
-
-          <div className="hero-badge">
-            <IonIcon icon={sunnyOutline} />
-            Explorador Activo
-          </div>
         </div>
 
-        {/* CAMINO SAGRADO */}
-        <div className="passport-card">
-          <div className="card-header">
-            <h3>Camino Sagrado</h3>
-            <span className="card-badge">2 / 8 Caminos honrados</span>
-          </div>
+        {/* ACCIONES */}
+        <div className="profile-actions">
+          <IonButton expand="block" routerLink="/map">
+            Volver al Mapa
+          </IonButton>
 
-          <IonProgressBar value={0.25} />
-
-          <p className="card-hint">
-            Cada paso te acerca más al conocimiento ancestral...
-          </p>
+          <IonButton expand="block" fill="outline" routerLink="/perfil">
+            Ver logros y recompensas
+          </IonButton>
         </div>
-
-        {/* CATEGORÍAS */}
-        <div className="passport-card">
-          <h3>Categorías de sellos</h3>
-
-          <div className="categories">
-            <div className="category">
-              <IonIcon icon={leafOutline} />
-              <span>Cultura Viva</span>
-              <small>3 sellos</small>
-            </div>
-
-            <div className="category">
-              <IonIcon icon={restaurantOutline} />
-              <span>Sabores del Cusco</span>
-              <small>1 sello</small>
-            </div>
-
-            <div className="category">
-              <IonIcon icon={shieldCheckmarkOutline} />
-              <span>Guardianes del Patrimonio</span>
-              <small>2 sellos</small>
-            </div>
-          </div>
-        </div>
-
-        {/* SELLOS COLECCIONADOS */}
-        <div className="passport-card">
-          <h3>Sellos sagrados coleccionados</h3>
-
-          <div className="seal-card">
-            <IonIcon icon={trailSignOutline} className="seal-icon" />
-            <div className="seal-info">
-              <strong>Ruta del Qhapaq Ñan</strong>
-              <small>Adquirido · 12 Jul 2024</small>
-            </div>
-            <IonIcon icon={checkmarkCircleOutline} className="seal-check" />
-          </div>
-
-          <div className="seal-card">
-            <IonIcon icon={leafOutline} className="seal-icon" />
-            <div className="seal-info">
-              <strong>Ritual Andino</strong>
-              <small>Adquirido · 18 Jul 2024</small>
-            </div>
-            <IonIcon icon={checkmarkCircleOutline} className="seal-check" />
-          </div>
-        </div>
-
-        {/* PRÓXIMOS SITIOS SAGRADOS */}
-<div className="passport-card">
-  <h3>Próximos Sitios Sagrados</h3>
-  <p className="section-subtitle">
-    Cada lugar te espera con un conocimiento ancestral único
-  </p>
-
-  <div className="sites-grid">
-    {[
-      'Sacsayhuamán',
-      'Qorikancha',
-      'Pisac',
-      'Ollantaytambo',
-      'Moray',
-      'Chinchero'
-    ].map((site) => (
-      <div className="site-card" key={site}>
-        <IonIcon icon={helpCircleOutline} />
-        <span>{site}</span>
-      </div>
-    ))}
-  </div>
-</div>
-
-{/* ACCIONES FINALES */}
-<div className="passport-actions">
-  <IonButton expand="block" onClick={() => history.push('/map')}>
-    <IonIcon slot="start" icon={mapOutline} />
-    Ir al Mapa
-  </IonButton>
-
-  <IonButton expand="block" fill="outline"   routerLink="/Perfil" >
-    <IonIcon slot="start" icon={trophyOutline} />
-    Ver Logros y Recompensas
-  </IonButton>
-</div>
 
       </IonContent>
-    </IonPage>
+    </Page>
   )
 }
 
