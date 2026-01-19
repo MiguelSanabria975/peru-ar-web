@@ -26,6 +26,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Escaner from './pages/Escaner';
+import Perfil from './pages/Perfil';
 
 setupIonicReact();
 
@@ -36,7 +37,8 @@ const App: React.FC = () => (
         <Route exact path="/home" component={Home} />
         <Route exact path="/map" component={Map} />
         <Route exact path="/passport" component={Passport} />
-        <Route path="/Escaner" component={Escaner} />
+        <Route exact path="/Escaner" component={Escaner} />
+        <Route exact path="/Perfil" component={Perfil} />
         <Redirect exact from="/" to="/home" />
       </IonRouterOutlet>
     </IonReactRouter>

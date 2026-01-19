@@ -147,7 +147,7 @@ const Passport: React.FC = () => {
     Ir al Mapa
   </IonButton>
 
-  <IonButton expand="block" fill="outline">
+  <IonButton expand="block" fill="outline"   routerLink="/Perfil" >
     <IonIcon slot="start" icon={trophyOutline} />
     Ver Logros y Recompensas
   </IonButton>
