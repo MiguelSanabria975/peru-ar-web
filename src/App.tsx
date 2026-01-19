@@ -3,6 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
+
 import Home from './pages/Home'
 import Map from './pages/Map'
 import Passport from './pages/Passport'
@@ -46,3 +47,5 @@ const App: React.FC = () => (
 );
 
 export default App;
+
+
