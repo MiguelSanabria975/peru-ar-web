@@ -27,8 +27,27 @@ import {
 
 import { useIonRouter } from '@ionic/react'
 import { useState } from 'react'
-import { btcSites } from '../data/btcSites'
+import { BTCSite, btcSites } from '../data/btcSites'
 import { ChakanaIcon } from '../components/icons/IncaIcons'
+
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
+import './Map.css'
+
+const createSiteIcon = (site: BTCSite) =>
+  L.divIcon({
+    className: 'custom-site-marker',
+    html: `
+      <div class="marker-core ${site.visited ? 'visited' : 'new'}">
+        ★
+      </div>
+    `,
+    iconSize: [42, 42],
+    iconAnchor: [21, 42]
+  })
+
+const CUSCO_CENTER: [number, number] = [-13.53195, -71.96746]
 
 const MapPage = () => {
   const router = useIonRouter()
@@ -49,6 +68,8 @@ const MapPage = () => {
           </IonButtons>
 
           <IonTitle>Camino Sagrado</IonTitle>
+
+          
 
           <IonButtons slot="end">
             <IonButton>
@@ -77,72 +98,102 @@ const MapPage = () => {
           </IonChip>
         </div>
 
-        {/* MAP */}
-        <div className="relative h-[65vh] mx-4 rounded-2xl overflow-hidden bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 border border-yellow-600/30">
+       {/* MAPA FUNCIONAL */}
+<div className="map-wrapper">
+  <MapContainer
+    center={CUSCO_CENTER}
+    zoom={14}
+    scrollWheelZoom={false}
+    className="map-container"
+  >
+    <TileLayer
+      attribution="&copy; OpenStreetMap"
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    />
 
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="w-20 h-20 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center shadow-xl">
-              <ChakanaIcon className="w-10 h-10" color="white" />
-            </div>
-            <IonText className="block text-center text-xs text-white mt-2">
-              Tu ubicación
-            </IonText>
-          </div>
+    <Marker position={CUSCO_CENTER}>
+      <Popup>Tu ubicación actual</Popup>
+    </Marker>
 
-          {btcSites.map((site: any, i: number) => (
-            <div
-              key={site.id}
-              className="absolute cursor-pointer"
-              style={{
-                top: `${15 + i * 12}%`,
-                left: `${20 + (i % 3) * 25}%`
-              }}
-              onClick={() => setSelectedSite(site)}
-            >
-              <div
-                className={`w-14 h-14 rounded-xl flex items-center justify-center border-2 shadow-lg
-                  ${site.visited
-                    ? 'bg-yellow-500 border-yellow-300'
-                    : 'bg-blue-600 border-white'
-                  }`}
-              >
-                <IonIcon icon={star} color="light" />
-              </div>
+    {btcSites.map(site => (
+  <Marker
+    key={site.id}
+    position={[site.lat, site.lng]}
+    icon={createSiteIcon(site)}
+    eventHandlers={{
+      click: () => setSelectedSite(site)
+    }}
+  >
+    <Popup>
+      <strong>{site.name}</strong>
+    </Popup>
 
-              <IonText className="block text-xs text-white text-center mt-1">
-                {site.name}
-              </IonText>
-            </div>
-          ))}
-        </div>
+    {btcSites.map(site => (
+  <div
+    key={`${site.id}-label`}
+    className="site-label"
+    style={{
+      top: `${site.lat}%`,
+      left: `${site.lng}%`
+    }}
+  >
+    {site.name}
+  </div>
+))}
 
-        {selectedSite && (
-          <IonCard className="mx-4 mt-4">
-            <IonCardContent>
-              <IonText color="light">
-                <h2>{selectedSite.name}</h2>
-              </IonText>
+  </Marker>
+))}
+  </MapContainer>
 
-              <IonText color="medium">
-                <p>{selectedSite.description}</p>
-              </IonText>
+  <div className="user-location-label">
+    <ChakanaIcon className="chakra-icon" />
+    <span>Estás en Cusco</span>
+  </div>
+</div>
 
-              <div className="flex gap-3 mt-4">
-                <IonButton expand="block" color="warning">
-                  Explorar sitio
-                </IonButton>
+    {selectedSite && (
+  <div className="site-modal">
 
-                <IonButton
-                  expand="block"
-                  fill="outline"
-                  onClick={() => setSelectedSite(null)}
-                >
-                  Cerrar
-                </IonButton>
-              </div>
-            </IonCardContent>
-          </IonCard>
-        )}
+    {/* ICONO + TIPO */}
+    <div className="site-header">
+      <IonIcon
+        icon={star}
+        className={`site-icon ${selectedSite.type}`}
+      />
+      <span className="site-type">
+        {selectedSite.type.toUpperCase()}
+      </span>
+    </div>
+
+    <h2 className="site-title">{selectedSite.name}</h2>
+
+    <p className="site-description">
+      {selectedSite.description}
+    </p>
+
+    <div className="site-meta">
+      <IonChip className="xp-chip">
+        +{selectedSite.xpReward} XP
+      </IonChip>
+
+      <IonChip className={selectedSite.visited ? 'visited' : 'new'}>
+        {selectedSite.visited ? 'Visitado' : 'Nuevo'}
+      </IonChip>
+    </div>
+
+    <IonButton expand="block" color="warning">
+      Explorar sitio
+    </IonButton>
+
+    <IonButton
+      expand="block"
+      fill="clear"
+      onClick={() => setSelectedSite(null)}
+    >
+      Cerrar
+    </IonButton>
+  </div>
+)}
 
         {!selectedSite && (
           <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
@@ -162,3 +213,5 @@ const MapPage = () => {
 }
 
 export default MapPage
+
+

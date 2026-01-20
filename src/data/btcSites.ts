@@ -6,6 +6,10 @@ export interface BTCSite {
   xpReward: number
   visited: boolean
   isLocal?: boolean
+
+  // 🔑 OBLIGATORIO PARA MAPA REAL
+  lat: number
+  lng: number
 }
 
 export const btcSites: BTCSite[] = [
@@ -16,7 +20,9 @@ export const btcSites: BTCSite[] = [
     type: 'fortress',
     xpReward: 120,
     visited: false,
-    isLocal: true
+    isLocal: true,
+    lat: -13.50978,
+    lng: -71.98138
   },
   {
     id: 'qorikancha',
@@ -24,16 +30,20 @@ export const btcSites: BTCSite[] = [
     description: 'Templo del Sol, corazón espiritual del imperio.',
     type: 'temple',
     xpReward: 150,
-    visited: true
+    visited: true,
+    lat: -13.52264,
+    lng: -71.96734
   },
   {
-    id: 'san_blás',
+    id: 'san_blas',
     name: 'Barrio de San Blas',
     description: 'Centro artesanal vivo de Cusco.',
     type: 'artisan',
     xpReward: 80,
     visited: false,
-    isLocal: true
+    isLocal: true,
+    lat: -13.51662,
+    lng: -71.96457
   },
   {
     id: 'mercado_san_pedro',
@@ -42,6 +52,8 @@ export const btcSites: BTCSite[] = [
     type: 'gastronomy',
     xpReward: 100,
     visited: false,
-    isLocal: true
+    isLocal: true,
+    lat: -13.52098,
+    lng: -71.97542
   }
 ]
