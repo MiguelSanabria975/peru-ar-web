@@ -1,24 +1,23 @@
 /* WRAPPER GENERAL */
 .map-wrapper {
   position: relative;
-  height: 70vh;
-  margin: 12px;
-  border-radius: 18px;
+  height: calc(100vh - 140px); /* HEADER + XP BAR */
+  margin: 0 12px 12px;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
 /* MAPA LEAFLET */
 .map-container {
   width: 100%;
   height: 100%;
-  border-radius: 18px;
 }
 
 /* Leaflet fix obligatorio */
 .leaflet-container {
-  width: 100% !important;
-  height: 100% !important;
-  touch-action: manipulation;
+  width: 100%;
+  height: 100%;
 }
 
 /* UBICACIÓN USUARIO */
@@ -163,7 +162,7 @@
   color: #111827;
   border-radius: 14px;
   font-weight: 600;
-
+  
 }
 
 
