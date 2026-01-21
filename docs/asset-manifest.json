@@ -1,30 +1,30 @@
 {
   "files": {
     "main.css": "/peru-ar-web/static/css/main.f55ad9c9.css",
-    "main.js": "/peru-ar-web/static/js/main.67f24487.js",
-    "static/js/867.851fc2df.chunk.js": "/peru-ar-web/static/js/867.851fc2df.chunk.js",
+    "main.js": "/peru-ar-web/static/js/main.898db938.js",
+    "static/js/806.612e3226.chunk.js": "/peru-ar-web/static/js/806.612e3226.chunk.js",
     "static/js/923.0a78bc26.chunk.js": "/peru-ar-web/static/js/923.0a78bc26.chunk.js",
     "static/js/627.e46727f7.chunk.js": "/peru-ar-web/static/js/627.e46727f7.chunk.js",
     "static/js/938.491afbe9.chunk.js": "/peru-ar-web/static/js/938.491afbe9.chunk.js",
     "static/js/247.49ad3ab2.chunk.js": "/peru-ar-web/static/js/247.49ad3ab2.chunk.js",
-    "static/js/82.13c65699.chunk.js": "/peru-ar-web/static/js/82.13c65699.chunk.js",
+    "static/js/82.67966cc9.chunk.js": "/peru-ar-web/static/js/82.67966cc9.chunk.js",
+    "static/js/768.307fd893.chunk.js": "/peru-ar-web/static/js/768.307fd893.chunk.js",
     "static/js/834.d9d6e562.chunk.js": "/peru-ar-web/static/js/834.d9d6e562.chunk.js",
-    "static/js/422.9d2be518.chunk.js": "/peru-ar-web/static/js/422.9d2be518.chunk.js",
     "service-worker.js": "/peru-ar-web/service-worker.js",
     "index.html": "/peru-ar-web/index.html",
     "main.f55ad9c9.css.map": "/peru-ar-web/static/css/main.f55ad9c9.css.map",
-    "main.67f24487.js.map": "/peru-ar-web/static/js/main.67f24487.js.map",
-    "867.851fc2df.chunk.js.map": "/peru-ar-web/static/js/867.851fc2df.chunk.js.map",
+    "main.898db938.js.map": "/peru-ar-web/static/js/main.898db938.js.map",
+    "806.612e3226.chunk.js.map": "/peru-ar-web/static/js/806.612e3226.chunk.js.map",
     "923.0a78bc26.chunk.js.map": "/peru-ar-web/static/js/923.0a78bc26.chunk.js.map",
     "627.e46727f7.chunk.js.map": "/peru-ar-web/static/js/627.e46727f7.chunk.js.map",
     "938.491afbe9.chunk.js.map": "/peru-ar-web/static/js/938.491afbe9.chunk.js.map",
     "247.49ad3ab2.chunk.js.map": "/peru-ar-web/static/js/247.49ad3ab2.chunk.js.map",
-    "82.13c65699.chunk.js.map": "/peru-ar-web/static/js/82.13c65699.chunk.js.map",
-    "834.d9d6e562.chunk.js.map": "/peru-ar-web/static/js/834.d9d6e562.chunk.js.map",
-    "422.9d2be518.chunk.js.map": "/peru-ar-web/static/js/422.9d2be518.chunk.js.map"
+    "82.67966cc9.chunk.js.map": "/peru-ar-web/static/js/82.67966cc9.chunk.js.map",
+    "768.307fd893.chunk.js.map": "/peru-ar-web/static/js/768.307fd893.chunk.js.map",
+    "834.d9d6e562.chunk.js.map": "/peru-ar-web/static/js/834.d9d6e562.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f55ad9c9.css",
-    "static/js/main.67f24487.js"
+    "static/js/main.898db938.js"
   ]
 }

@@ -8,6 +8,7 @@ import Map from './pages/Map'
 import Passport from './pages/Passport'
 import Escaner from './pages/Escaner'
 import Perfil from './pages/Perfil'
+import Site from './pages/Site'
 
 setupIonicReact()
 
@@ -17,6 +18,7 @@ const App: React.FC = () => (
       <IonRouterOutlet animated={false}>
         <Route exact path="/home" component={Home} />
         <Route exact path="/map" component={Map} />
+        <Route exact path="/site/:id" component={Site} />
         <Route exact path="/passport" component={Passport} />
         <Route exact path="/escaner" component={Escaner} />
         <Route exact path="/perfil" component={Perfil} />
