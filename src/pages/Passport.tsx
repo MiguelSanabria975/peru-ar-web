@@ -22,7 +22,7 @@ import './Passport.css'
 const Passport = () => {
   return (
     <Page title="Pasaporte del explorador">
-      <IonContent fullscreen className="profile-content">
+      <IonContent fullscreen className="profile-content, page-light" >
 
         {/* TARJETA PRINCIPAL */}
         <div className="profile-card main-profile-card">

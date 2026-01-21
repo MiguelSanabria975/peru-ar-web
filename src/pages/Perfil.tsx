@@ -43,7 +43,7 @@ const Perfil: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen className="profile-content">
+      <IonContent fullscreen className="profile-content, page-light" >
 
         {/* TARJETA PRINCIPAL */}
         <div className="profile-card main-profile-card">

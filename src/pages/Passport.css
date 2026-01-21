@@ -162,3 +162,18 @@
   flex-direction: column;
   gap: 12px;
 }
+
+.page-light {
+  --ion-background-color: #ffffff;
+  --ion-text-color: #111111;
+}
+
+.page-light ion-text,
+.page-light ion-label,
+.page-light h1,
+.page-light h2,
+.page-light h3,
+.page-light p {
+  color: #111111 !important;
+}
+
