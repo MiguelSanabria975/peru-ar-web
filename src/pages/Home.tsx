@@ -46,7 +46,7 @@ const Home: React.FC = () => {
         <h1 className="home-title">Explora Cusco</h1>
 
         <h2 className="home-subtitle">
-          Patrimonio vivo del mundo
+          Patrimonio vivo del mundo.
         </h2>
 
         <p className="home-quote">
